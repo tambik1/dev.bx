@@ -1,31 +1,29 @@
 <?php
 /** @var array $movies */
-$userAge = readline("=>");  // Возраст пользователя
-$i = 1; // счётчик для нумерации списка фильмов
 
 // Функция проверяющая, является ли введённое значение числом обозначающей возрасти если true обходит массив.
-function searchMoviesByAge(array $movies, $userAge, $i)
+function searchMoviesByAge(array $movies): void
 {
+	$userAge = readline("=>");  // Возраст пользователя
+	(int)$userAge;
+	$i = 1; // счётчик для нумерации списка фильмов
 	if ((0 > $userAge) || ($userAge > 99) || (!is_numeric($userAge)))
 	{
 		echo "{$userAge} - Not age =/";
+		return;
 	}
-	else
+	foreach ($movies as $filmIndex => $film)
 	{
-		foreach ($movies as $filmIndex => $film)
+		if ($film["age_restriction"] <= $userAge)
 		{
-			if ($film["age_restriction"] <= $userAge)
-			{
-				$recommendedFilms[] = $film;
-				printMessage($i . ". " . formatMovies($film));
-				$i++;
-			}
+			printMessage($i . ". " . formatMovie($film));
+			$i++;
 		}
 	}
 }
 
 // Функция для форматирования массива с фильмами
-function formatMovies(array $movie): string
+function formatMovie(array $movie): string
 {
 	return "{$movie['title']} ({$movie['release_year']}) {$movie['age_restriction']}+  Rating - {$movie['rating']}";
 }
