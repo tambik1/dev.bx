@@ -14,7 +14,7 @@ body {
 
 .sidebar {
 	display: block;
-	width: 400px;
+	max-width: 400px;
 	background: #383838;
 }
 
