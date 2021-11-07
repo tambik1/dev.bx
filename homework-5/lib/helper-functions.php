@@ -1,16 +1,17 @@
 <?php
 
-function printMessage(string $message)
+function convertToHoursMins($time, $format = '%02d:%02d')
 {
-	echo $message;
+	if ($time < 1)
+	{
+		return;
+	}
+	$hours = floor($time / 60);
+	$minutes = ($time % 60);
+	return sprintf($format, $hours, $minutes);
 }
 
-function escape(string $output)
+function expandArray(array $mainArray, string $secondArray): string
 {
-	return htmlspecialchars($output, ENT_QUOTES);
-}
-
-function getFileName($path): string
-{
-	return basename($path, ".php");
+	return implode(", ", array_slice($mainArray[$secondArray], 0));;
 }

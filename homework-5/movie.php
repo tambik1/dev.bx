@@ -6,10 +6,11 @@ require_once "./data/array-movies.php";
 require_once "./lib/helper-functions.php";
 require_once "./lib/template-functions.php";
 
-$contentPage = renderTemplate("./resources/pages/content.php", [
+$personalPageMovie = renderTemplate("./resources/pages/movies-content.php", [
 	"movies" => $movies,
 ]);
 
-renderLayout($contentPage, [
+renderLayout($personalPageMovie, [
 	"genres" => $genres,
 ]);
+?>
