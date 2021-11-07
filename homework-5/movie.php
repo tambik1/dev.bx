@@ -13,4 +13,3 @@ $personalPageMovie = renderTemplate("./resources/pages/movies-content.php", [
 renderLayout($personalPageMovie, [
 	"genres" => $genres,
 ]);
-?>

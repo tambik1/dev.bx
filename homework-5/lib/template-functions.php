@@ -17,7 +17,9 @@ function renderTemplate(string $path, array $templateData = []): string
 	include $path;
 
 	return ob_get_clean();
-};
+}
+
+;
 
 function renderLayout(string $content, array $templateData = []): void
 {
@@ -27,7 +29,9 @@ function renderLayout(string $content, array $templateData = []): void
 	$result = renderTemplate("./resources/pages/layout.php", $data);
 
 	echo $result;
-};
+}
+
+;
 
 function getMovieByGenres(array $movies): array
 {
@@ -44,4 +48,15 @@ function getMovieByGenres(array $movies): array
 		}
 	}
 	return $movies;
+}
+
+function getMovieById(array $movies): array
+{
+	$movieId = (int)$_GET['id'];
+	$personalDataMovie = $movies[$movieId - 1];
+	if ($movieId <= 0 or $personalDataMovie == null)
+	{
+		echo '404 Страница не найдена';
+	}
+	return $personalDataMovie;
 }

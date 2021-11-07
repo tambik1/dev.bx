@@ -33,11 +33,15 @@
 			<li class="menu-item">
 				<a class="a-not-active" href="/homework-5/plug.php">Избранное</a>
 			</li>
-			<? foreach ($genres as $genre): ?>
-			<li class="menu-item">
-				<a class="<?=$genre == $_GET['genres'] ? "a-active" : "a-not-active"?>" href="http://dev.bx/homework-5?genres=<?= $genre?>"><?echo $genre?></a>
-			</li>
-			<?php endforeach; ?>
+			<?
+			foreach ($genres as $genre): ?>
+				<li class="menu-item">
+					<a class="<?= $genre == $_GET['genres'] ? "a-active"
+						: "a-not-active" ?>" href="http://dev.bx/homework-5?genres=<?= $genre ?>"><?
+						echo $genre ?></a>
+				</li>
+			<?php
+			endforeach; ?>
 		</ul>
 
 	</div>

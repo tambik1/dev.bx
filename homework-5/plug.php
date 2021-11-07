@@ -12,4 +12,3 @@ $plugPage = renderTemplate("./resources/pages/plug-page.php", [
 renderLayout($plugPage, [
 	"genres" => $genres,
 ]);
-?>

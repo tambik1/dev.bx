@@ -1,4 +1,4 @@
-.plug{
+.plug {
 	display: flex;
 	margin: 50px 50px;
 	width: 800px;
@@ -8,7 +8,8 @@
 	justify-content: space-around;
 	flex-direction: column;
 }
-.plug-title{
+
+.plug-title {
 	padding-left: 50px;
 	display: inline-block;
 	font-family: 'Open Sans', sans-serif;
@@ -18,5 +19,5 @@
 	line-height: 22px;
 	align-items: center;
 	text-transform: uppercase;
-	color: #000
+	color: #000;
 }
