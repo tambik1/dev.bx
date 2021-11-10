@@ -22,6 +22,7 @@ body {
 	display: block;
 	max-width: 400px;
 	background: #383838;
+	overflow-y: auto;
 }
 
 .logo {
@@ -29,11 +30,11 @@ body {
 	display: block;
 	margin: auto;
 }
-
+.logo img{
+	width: 228px;
+}
 .menu {
-	height: 100%;
 	margin: 30px;
-	overflow: auto;
 }
 
 .menu-item {
@@ -227,7 +228,10 @@ body {
 }
 
 .specification h4 {
-	height: 45px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	height: 30px;
 	vertical-align: baseline;
 	background: transparent;
 	margin: 5px 20px;

@@ -149,7 +149,8 @@
 }
 
 .rating-area:not(:checked) > label:before {
-	content: '★';
+	content: '■';
+/*	&#9632;	&#x25A0;*/
 }
 
 .rating-area > input:checked ~ label {
