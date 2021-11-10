@@ -1,12 +1,12 @@
 <?php
 /** @var array $movies */
+/** @var array $genres */
+/** @var array $filteredMovies */
 require_once "./lib/helper-functions.php";
-$sortMovies = getMovieByGenres($movies);
-$genres = 'genres';
 ?>
 
 <?
-foreach ($sortMovies as $movie): ?>
+foreach ($movies as $movie): ?>
 	<div class="card">
 		<div class="card-hover">
 			<a href="/homework-5/movie.php?id=<?= $movie['id'] ?>" class="card-hover--more">Подробне</a>
