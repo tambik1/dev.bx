@@ -9,7 +9,7 @@ require_once "./lib/helper-functions.php";
 foreach ($movies as $movie): ?>
 	<div class="card">
 		<div class="card-hover">
-			<a href="/homework-5/movie.php?id=<?= $movie['id'] ?>" class="card-hover--more">Подробне</a>
+			<a href="/homework-5/movie.php?id=<?= $movie['id'] ?>" class="card-hover--more">Подробнее</a>
 		</div>
 		<div class="movie-img" style="background-image: url(<?= "./resources/movie-images/"
 		. $movie['id']

@@ -13,6 +13,21 @@ error_reporting(-1);
 $movieId = (int)$_GET['id'];
 $personalDataMovie = getMovieById ($movies, $movieId);
 $rating = floor($personalDataMovie['rating']);
+if (!$personalDataMovie)
+{
+	echo '404 страница не найдена';
+	exit();
+}
+
+if (isset($_GET['id']))
+{
+	$movieId = $_GET['id'];
+}
+else
+{
+	header("/index.php");
+	exit;
+}
 
 $personalPageMovie = renderTemplate("./resources/pages/movies-content.php", [
 	"movies" => $movies,
