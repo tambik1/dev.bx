@@ -1,5 +1,4 @@
 <?php
-
 $genres = [
 	'sci-fi' => 'Фантастика',
 	'drama' => 'Драма',
@@ -15,7 +14,7 @@ $genres = [
 	'western' => 'Вестерн',
 	'war' => 'Военный',
 	'sport' => 'Спорт',
-	'history' => 'История'
+	'history' => 'История',
 ];
 
 $movies = [
@@ -30,7 +29,7 @@ $movies = [
 		'director' => 'Кристофер Нолан',
 		'age-restriction' => 16,
 		'release-date' => 2014,
-		'rating' => 8.6
+		'rating' => 8.6,
 	],
 	[
 		'id' => 2,
@@ -43,7 +42,7 @@ $movies = [
 		'director' => 'Ли Анкрич',
 		'age-restriction' => 12,
 		'release-date' => 2017,
-		'rating' => 8.6
+		'rating' => 8.6,
 	],
 	[
 		'id' => 3,
@@ -56,7 +55,7 @@ $movies = [
 		'director' => 'Кристофер Нолан',
 		'age-restriction' => 12,
 		'release-date' => 2010,
-		'rating' => 8.7
+		'rating' => 8.7,
 	],
 	[
 		'id' => 4,
@@ -69,7 +68,7 @@ $movies = [
 		'director' => 'Оливье Накаш',
 		'age-restriction' => 16,
 		'release-date' => 2011,
-		'rating' => 8.8
+		'rating' => 8.8,
 	],
 	[
 		'id' => 5,
@@ -82,7 +81,7 @@ $movies = [
 		'director' => 'Гай Ричи',
 		'age-restriction' => 18,
 		'release-date' => 2019,
-		'rating' => 8.5
+		'rating' => 8.5,
 	],
 	[
 		'id' => 6,
@@ -95,7 +94,7 @@ $movies = [
 		'director' => 'Дэмьен Шазелл',
 		'age-restriction' => 16,
 		'release-date' => 2013,
-		'rating' => 8.3
+		'rating' => 8.3,
 	],
 	[
 		'id' => 7,
@@ -108,7 +107,7 @@ $movies = [
 		'director' => 'Питер Фаррелли',
 		'age-restriction' => 16,
 		'release-date' => 2018,
-		'rating' => 8.4
+		'rating' => 8.4,
 	],
 	[
 		'id' => 8,
@@ -121,7 +120,7 @@ $movies = [
 		'director' => 'Мартин Скорсезе',
 		'age-restriction' => 18,
 		'release-date' => 2013,
-		'rating' => 7.9
+		'rating' => 7.9,
 	],
 	[
 		'id' => 9,
@@ -134,7 +133,7 @@ $movies = [
 		'director' => 'Квентин Тарантино',
 		'age-restriction' => 18,
 		'release-date' => 2012,
-		'rating' => 8.2
+		'rating' => 8.2,
 	],
 	[
 		'id' => 10,
@@ -147,7 +146,7 @@ $movies = [
 		'director' => 'Питер Джексон',
 		'age-restriction' => 6,
 		'release-date' => 2012,
-		'rating' => 8.1
+		'rating' => 8.1,
 	],
 	[
 		'id' => 11,
@@ -160,7 +159,7 @@ $movies = [
 		'director' => 'Квентин Тарантино',
 		'age-restriction' => 18,
 		'release-date' => 2015,
-		'rating' => 7.9
+		'rating' => 7.9,
 	],
 	[
 		'id' => 12,
@@ -173,7 +172,7 @@ $movies = [
 		'director' => 'Пит Доктер',
 		'age-restriction' => 6,
 		'release-date' => 2015,
-		'rating' => 8.0
+		'rating' => 8.0,
 	],
 	[
 		'id' => 13,
@@ -186,7 +185,7 @@ $movies = [
 		'director' => 'Дэвид Йейтс',
 		'age-restriction' => 12,
 		'release-date' => 2011,
-		'rating' => 8.1
+		'rating' => 8.1,
 	],
 	[
 		'id' => 14,
@@ -199,7 +198,7 @@ $movies = [
 		'director' => 'Байрон Ховард',
 		'age-restriction' => 6,
 		'release-date' => 2016,
-		'rating' => 8.3
+		'rating' => 8.3,
 	],
 	[
 		'id' => 15,
@@ -212,7 +211,7 @@ $movies = [
 		'director' => 'Мэл Гибсон',
 		'age-restriction' => 18,
 		'release-date' => 2016,
-		'rating' => 8.0
+		'rating' => 8.0,
 	],
 	[
 		'id' => 16,
@@ -225,7 +224,7 @@ $movies = [
 		'director' => 'Джеймс Мэнголд',
 		'age-restriction' => 16,
 		'release-date' => 2019,
-		'rating' => 8.2
+		'rating' => 8.2,
 	],
 	[
 		'id' => 17,
@@ -238,7 +237,7 @@ $movies = [
 		'director' => 'Энтони Руссо',
 		'age-restriction' => 16,
 		'release-date' => 2018,
-		'rating' => 7.9
+		'rating' => 7.9,
 	],
 	[
 		'id' => 18,
@@ -251,7 +250,7 @@ $movies = [
 		'director' => 'Томм Мур',
 		'age-restriction' => 6,
 		'release-date' => 2014,
-		'rating' => 8.1
+		'rating' => 8.1,
 	],
 	[
 		'id' => 19,
@@ -264,7 +263,7 @@ $movies = [
 		'director' => 'Питер Джексон',
 		'age-restriction' => 12,
 		'release-date' => 2013,
-		'rating' => 8.0
+		'rating' => 8.0,
 	],
 	[
 		'id' => 20,
@@ -277,7 +276,7 @@ $movies = [
 		'director' => 'Том Хупер',
 		'age-restriction' => 16,
 		'release-date' => 2010,
-		'rating' => 8.0
+		'rating' => 8.0,
 	],
 	[
 		'id' => 21,
@@ -290,7 +289,7 @@ $movies = [
 		'director' => 'Джеймс Ганн',
 		'age-restriction' => 12,
 		'release-date' => 2014,
-		'rating' => 7.8
+		'rating' => 7.8,
 	],
 	[
 		'id' => 22,
@@ -303,7 +302,7 @@ $movies = [
 		'director' => 'Боб Персичетти',
 		'age-restriction' => 6,
 		'release-date' => 2018,
-		'rating' => 8.0
+		'rating' => 8.0,
 	],
 	[
 		'id' => 23,
@@ -316,7 +315,7 @@ $movies = [
 		'director' => 'Питер Джексон',
 		'age-restriction' => 12,
 		'release-date' => 2014,
-		'rating' => 7.8
+		'rating' => 7.8,
 	],
 	[
 		'id' => 24,
@@ -329,7 +328,7 @@ $movies = [
 		'director' => 'Жан-Марк Валле',
 		'age-restriction' => 18,
 		'release-date' => 2013,
-		'rating' => 7.9
+		'rating' => 7.9,
 	],
 	[
 		'id' => 25,
@@ -342,7 +341,7 @@ $movies = [
 		'director' => 'Тейт Тейлор',
 		'age-restriction' => 12,
 		'release-date' => 2011,
-		'rating' => 8.2
+		'rating' => 8.2,
 	],
 	[
 		'id' => 26,
@@ -355,7 +354,7 @@ $movies = [
 		'director' => 'Ханнес Холм',
 		'age-restriction' => 16,
 		'release-date' => 2015,
-		'rating' => 8.0
+		'rating' => 8.0,
 	],
 	[
 		'id' => 27,
@@ -368,7 +367,7 @@ $movies = [
 		'director' => 'Райан Джонсон',
 		'age-restriction' => 16,
 		'release-date' => 2019,
-		'rating' => 8.0
+		'rating' => 8.0,
 	],
 	[
 		'id' => 28,
@@ -381,7 +380,7 @@ $movies = [
 		'director' => 'Джозеф Косински',
 		'age-restriction' => 16,
 		'release-date' => 2017,
-		'rating' => 8.0
+		'rating' => 8.0,
 	],
 	[
 		'id' => 29,
@@ -394,7 +393,7 @@ $movies = [
 		'director' => 'Дэвид Добкин',
 		'age-restriction' => 18,
 		'release-date' => 2014,
-		'rating' => 7.9
+		'rating' => 7.9,
 	],
 	[
 		'id' => 30,
@@ -407,10 +406,9 @@ $movies = [
 		'director' => 'Дэвид Финчер',
 		'age-restriction' => 16,
 		'release-date' => 2014,
-		'rating' => 8.0
+		'rating' => 8.0,
 	],
 ];
-
 
 // genre filtering
 $code = 'family';
@@ -418,6 +416,6 @@ foreach ($movies as $movie)
 {
 	if (isset($genres[$code]) && in_array($genres[$code], $movie['genres'], true))
 	{
-//		var_dump('YES!', $movie['title']);
+		//		var_dump('YES!', $movie['title']);
 	}
 }
