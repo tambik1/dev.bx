@@ -1,7 +1,10 @@
 <?php
 /** @var array $genres */
 /** @var array $movies */
+/** @var array $config */
+/** @var $getGenres */
 /** @var string $content */
+/** @var $requestUrl */
 ?>
 
 <!doctype html>
@@ -27,17 +30,18 @@
 		</div>
 
 		<ul class="menu">
-			<li class="menu-item">
-				<a class="a-not-active" href="/homework-5/">Главная</a>
-			</li>
-			<li class="menu-item">
-				<a class="a-not-active" href="/homework-5/plug.php">Избранное</a>
-			</li>
-			<?
-			foreach ($genres as $genre): ?>
+
+			<?php foreach ($config['menu'] as $key => $name): ?>
 				<li class="menu-item">
-					<a class="<?= $genre == $_GET['genres'] ? "a-active"
-						: "a-not-active" ?>" href="http://dev.bx/homework-5?genres=<?= $genre ?>"><?
+					<a class="<?= $requestUrl === "/homework-5/" . $key . ".php" ? "a-active" : "a-not-active" ?>" href="/homework-5/<?= $key . ".php" ?>"><?= $name ?></a>
+				</li>
+			<?php
+			endforeach; ?>
+			<?
+			foreach ($genres as $key => $genre): ?>
+				<li class="menu-item">
+					<a class="<?= $getGenres === $key ? "a-active"
+						: "a-not-active" ?>" href="/homework-5?genre=<?= $key ?>"><?
 						echo $genre ?></a>
 				</li>
 			<?php
