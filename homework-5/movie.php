@@ -26,7 +26,7 @@ if (isset($_GET['id']))
 else
 {
 	header("/index.php");
-	exit;
+	exit();
 }
 
 $personalPageMovie = renderTemplate("./resources/pages/movies-content.php", [
