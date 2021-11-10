@@ -52,7 +52,7 @@
 
 	<div class="container">
 		<div class="header">
-			<form class="search">
+			<form class="search" method="get">
 				<label>
 					<input class="search-input" type="search" placeholder="Поиск по каталогу..." style="background-image: url(./resources/layout-img/search-icon.png)">
 				</label>
