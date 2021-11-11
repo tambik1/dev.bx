@@ -11,8 +11,10 @@ require_once "./lib/template-functions.php";
 require_once "./lib/filtering-functions.php";
 error_reporting(-1);
 $movieId = (int)$_GET['id'];
-$personalDataMovie = getMovieById ($movies, $movieId);
+$personalDataMovie = getMovieById ($movies, $movieId );
 $rating = floor($personalDataMovie['rating']);
+
+
 if (!$personalDataMovie)
 {
 	echo '404 страница не найдена';
@@ -22,10 +24,12 @@ if (!$personalDataMovie)
 if (isset($_GET['id']))
 {
 	$movieId = $_GET['id'];
+	$personalDataMovie = getMovieById ($movies, (int)$_GET['id']);
+	$rating = floor($personalDataMovie['rating']);
 }
 else
 {
-	header("/index.php");
+	$movieId ='1';
 	exit();
 }
 

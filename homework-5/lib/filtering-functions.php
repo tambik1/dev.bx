@@ -24,3 +24,17 @@ function getMovieById(array $movies, $id)
 		}
 	}
 }
+
+function getMovieBySearch(array $movies, string $searcher)
+{
+	$searchMovies = [];
+	foreach ($movies as $film)
+	{
+		if (mb_stristr($film['title'], $searcher) !== false)
+		{
+			$searchMovies[] = $film;
+		}
+		$movies = $searchMovies;
+	}
+	return $movies;
+}

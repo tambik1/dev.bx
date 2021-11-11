@@ -19,7 +19,13 @@ else
 {
 	$getGenres = '';
 }
-
+if (isset($_GET['search']))
+{
+	if (strlen($_GET['search']) > 0)
+	{
+		$movies = getMovieBySearch($movies, $_GET['search']);
+	}
+}
 
 $contentPage = renderTemplate("./resources/pages/content.php", [
 	"movies" => $movies,
