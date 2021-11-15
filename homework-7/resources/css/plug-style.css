@@ -1,0 +1,23 @@
+.plug {
+	display: flex;
+	margin: 50px 50px;
+	width: 800px;
+	height: 40px;
+	background-color: #fff;
+	border-radius: 20px;
+	justify-content: space-around;
+	flex-direction: column;
+}
+
+.plug-title {
+	padding-left: 50px;
+	display: inline-block;
+	font-family: 'Open Sans', sans-serif;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 18px;
+	line-height: 22px;
+	align-items: center;
+	text-transform: uppercase;
+	color: #000;
+}
