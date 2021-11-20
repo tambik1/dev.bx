@@ -1,9 +1,10 @@
 <?php
 declare(strict_types = 1);
-/** @var array $genres */
+// /** @var array $genres */
 /** @var array $movies */
 /** @var array $config */
 /** @var $requestUrl */
+require_once "./lib/db-connector.php";
 require_once "./data/array-movies.php";
 require_once "./data/config.php";
 require_once "./lib/helper-functions.php";
@@ -13,7 +14,8 @@ error_reporting(-1);
 $movieId = (int)$_GET['id'];
 $personalDataMovie = getMovieById ($movies, $movieId );
 $rating = floor($personalDataMovie['rating']);
-
+$db_connect = dbConnect($config);
+$genres = getGenresFromDB($db_connect);
 
 if (!$personalDataMovie)
 {
@@ -44,3 +46,8 @@ renderLayout($personalPageMovie, [
 	"genres" => $genres,
 	"config" => $config,
 ]);
+
+
+
+
+dbConnect($config);

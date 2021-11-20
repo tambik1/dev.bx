@@ -40,9 +40,9 @@
 			<?
 			foreach ($genres as $key => $genre): ?>
 				<li class="menu-item">
-					<a class="<?= $getGenres === $key ? "a-active"
+					<a class="<?= $getGenres === $genre["CODE"] ? "a-active"
 						: "a-not-active" ?>" href="/homework-7?genre=<?= $key ?>"><?
-						echo $genre ?></a>
+						echo $genre["NAME"] ?></a>
 				</li>
 			<?php
 			endforeach; ?>
