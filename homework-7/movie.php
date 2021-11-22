@@ -11,10 +11,10 @@ require_once "./lib/helper-functions.php";
 require_once "./lib/template-functions.php";
 require_once "./lib/filtering-functions.php";
 error_reporting(-1);
-$movieId = (int)$_GET['id'];
-$personalDataMovie = getMovieById ($movies, $movieId );
-$rating = floor($personalDataMovie['rating']);
 $db_connect = dbConnect($config);
+$movieId = (int)$_GET['id'];
+$personalDataMovie = getMovieFromDbById($db_connect, $movieId);
+$rating = floor($personalDataMovie['ID']['RATING']);
 $genres = getGenresFromDB($db_connect);
 
 if (!$personalDataMovie)
@@ -26,8 +26,8 @@ if (!$personalDataMovie)
 if (isset($_GET['id']))
 {
 	$movieId = $_GET['id'];
-	$personalDataMovie = getMovieById ($movies, (int)$_GET['id']);
-	$rating = floor($personalDataMovie['rating']);
+	$personalDataMovie = getMovieFromDbById($db_connect, $movieId);
+	$rating = floor($personalDataMovie['ID']['RATING']);
 }
 else
 {

@@ -10,11 +10,11 @@ require_once "./lib/helper-functions.php";
 	<div class="personal-page--header">
 		<div class="personal-page--header--title">
 			<h2>
-				<?= $personalDataMovie['title'] ?>
+				<?= $personalDataMovie['TITLE'] ?>
 			</h2>
 			<h5>
-				<?= $personalDataMovie['original-title'] ?>
-				<span class="age-restriction"><?= $personalDataMovie['age-restriction'] ?>+</span>
+				<?= $personalDataMovie['ORIGINAL_TITLE'] ?>
+				<span class="age-restriction"><?= $personalDataMovie['AGE_RESTRICTION'] ?>+</span>
 			</h5>
 		</div>
 		<div class="personal-page--header--favorites-icon" style="background-image: url(./resources/layout-img/icon.svg)">
@@ -24,7 +24,7 @@ require_once "./lib/helper-functions.php";
 	<hr class="personal-page--header--hr">
 	<div class="personal-page-main">
 		<div class="personal-page-main--poster " style="background-image: url(<?= "./resources/movie-images/"
-		. $personalDataMovie['id']
+		. $personalDataMovie['ID']
 		. ".jpg" ?> )"></div>
 		<div class="personal-page-main--about">
 			<div class="personal-page-main--rating-block">
@@ -44,7 +44,7 @@ require_once "./lib/helper-functions.php";
 					?>
 				</div>
 				<!--			рейтинг фильма конец-->
-				<div class="movie-rating"><?= $personalDataMovie['rating'] ?></div>
+				<div class="movie-rating"><?= $personalDataMovie['RATING'] ?></div>
 			</div>
 			<h3>О фильме</h3>
 			<div class="personal-page-main--about--table">
@@ -54,7 +54,7 @@ require_once "./lib/helper-functions.php";
 					<span>В главных ролях:</span>
 				</div>
 				<div class="personal-page-main--about--table-right">
-					<span><?= $personalDataMovie['release-date'] ?></span>
+					<span><?= $personalDataMovie['RELEASE_DATE'] ?></span>
 					<span><?= $personalDataMovie['director'] ?></span>
 					<span><?= expandArray($personalDataMovie, 'cast') ?></span>
 				</div>
