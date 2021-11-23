@@ -1,19 +1,17 @@
 <?php
 declare(strict_types = 1);
-/** @var array $genres */
-/** @var array $movies */
 /** @var array $config */
 /** @var $getGenres */
 require_once "./data/config.php";
-require_once "./data/array-movies.php";
 require_once "./lib/template-functions.php";
 require_once "./lib/filtering-functions.php";
+require_once "./lib/db-connector.php";
 error_reporting(-1);
-
-
+$db_connect = dbConnect($config);
+$genres = getGenresFromDB($db_connect);
 if (isset($_GET['genre']))
 {
-	$movies = getMovieByGenres($movies, $_GET['genre'], $genres);
+	$movies = $movies = getMovieFromDB($db_connect, $genres, $getGenres);
 	$getGenres = $_GET['genre'];
 }
 else
@@ -23,7 +21,7 @@ else
 
 $requestUrl = $_SERVER["REQUEST_URI"];
 $plugPage = renderTemplate("./resources/pages/plug-page.php", [
-	"movies" => $movies,
+
 ]);
 
 renderLayout($plugPage, [

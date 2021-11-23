@@ -1,34 +1,5 @@
 <?php
-/** @var array $config */
-require_once "./lib/db-connector.php";
-$db_res = dbConnect($config);
 
-// function getMovieById(array $movies, $id)
-// {
-// 	foreach ($movies as $movie)
-// 	{
-// 		if ($movie['id'] === $id)
-// 		{
-// 			return $movie;
-// 		}
-// 	}
-// }
-
-// function getMovieBySearch(array $movies, string $searcher)
-// {
-// 	$searchMovies = [];
-// 	foreach ($movies as $film)
-// 	{
-// 		if (mb_stristr($film['title'], $searcher) !== false)
-// 		{
-// 			$searchMovies[] = $film;
-// 		}
-// 		$movies = $searchMovies;
-// 	}
-// 	return $movies;
-// }
-
-// тут уже работа с БД
 function getGenresFromDB($db_res): array
 {
 	$query = "SELECT * FROM GENRE;";
@@ -45,7 +16,7 @@ function getGenresFromDB($db_res): array
 	return $result;
 }
 
-function getMovieFromDB($db_res, $genres, string $genre = ""): array
+function getMovieFromDB($db_res, $genres, $genre = 1): array
 {
 	$result = [];
 	$notFilteredGenre = getDataFromDb();
@@ -81,11 +52,12 @@ function getMovieFromDbById($db_res, $id): array
 		$row["id_actor"] = getNamesById($db_res, $row["id_actor"], ",");
 		$result[$row["ID"]] = $row;
 	}
-	return $result;
+	return call_user_func_array('array_merge', $result);
 }
 
 function getNamesById($db_res, string $id, string $separator): array
 {
+	$explodeArray = explode($separator, $id);
 	$query = 'SELECT * from actor;';
 	$mysqli_result = mysqli_query($db_res, $query);
 	if ($mysqli_result === false)
@@ -96,14 +68,12 @@ function getNamesById($db_res, string $id, string $separator): array
 	{
 		$a[] = $actor;
 	}
-	return $a;
+	foreach ($explodeArray as &$value)
+	{
+		$value = $a[$value]['NAME'];
+	}
 
-	// foreach ($row = $mysqli_result->fetch_assoc() as $name)
-	// {
-	// 	$row = explode($separator, $id);
-	// 	$result[$row[$name]] = $row;
-	// }
-	// return $row;
+	return $explodeArray;
 }
 
 function getNamesByGenres($gen, string $id, string $separator): array

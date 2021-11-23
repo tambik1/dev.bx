@@ -57,7 +57,7 @@
 					<input class="search-input" type="search" name="search"  placeholder="Поиск по каталогу..." style="background-image: url(./resources/layout-img/search-icon.png)">
 				</label>
 				<input class="search-submit-movie" type="submit" value="Искать">
-				<a href="/homework-5/plug.php" class="add-submit-movie">Добавить фильм</a>
+				<a href="/homework-7/plug.php" class="add-submit-movie">Добавить фильм</a>
 
 			</form>
 		</div>

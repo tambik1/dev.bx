@@ -1,5 +1,4 @@
 <?php
-/** @var array $movies */
 /** @var array $personalDataMovie */
 /** @var $rating  */
 /** @var $movieId  */
@@ -55,13 +54,13 @@ require_once "./lib/helper-functions.php";
 				</div>
 				<div class="personal-page-main--about--table-right">
 					<span><?= $personalDataMovie['RELEASE_DATE'] ?></span>
-					<span><?= $personalDataMovie['director'] ?></span>
-					<span><?= expandArray($personalDataMovie, 'cast') ?></span>
+					<span><?= $personalDataMovie['NAME'] ?></span>
+					<span><?= implode($personalDataMovie['id_actor'])?></span>
 				</div>
 			</div>
 			<h3>Описание</h3>
 			<div class="personal-page-main--about--description">
-				<?= $personalDataMovie['description'] ?>
+				<?= $personalDataMovie['DESCRIPTION']  ?>
 			</div>
 		</div>
 	</div>
