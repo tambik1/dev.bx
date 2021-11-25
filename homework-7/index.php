@@ -14,7 +14,7 @@ $genres = getGenresFromDB($db_connect);
 $requestUrl = $_SERVER['REQUEST_URI'];
 if (isset($_GET['genre']))
 {
-	$getGenres = $_GET['genre'];
+	$getGenres = (int)$_GET['genre'];
 	$movies = getMovieFromDB($db_connect, $genres, $getGenres);
 }
 else
@@ -22,13 +22,7 @@ else
 	$getGenres = '';
 	$movies = getMovieFromDB($db_connect, $genres, $getGenres);
 }
-if (isset($_GET['search']))
-{
-	if (strlen($_GET['search']) > 0)
-	{
-		$movies = getMovieBySearch($movies, $_GET['search']);
-	}
-}
+
 
 $contentPage = renderTemplate("./resources/pages/content.php", [
 	"movies" => $movies,

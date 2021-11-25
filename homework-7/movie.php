@@ -22,7 +22,7 @@ if (!$personalDataMovie)
 
 if (isset($_GET['id']))
 {
-	$movieId = $_GET['id'];
+	$movieId = (int)$_GET['id'];
 	$personalDataMovie = getMovieFromDbById($db_connect, $movieId);
 	$rating = floor($personalDataMovie['RATING']);
 }
