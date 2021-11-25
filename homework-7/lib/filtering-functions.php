@@ -16,7 +16,7 @@ function getGenresFromDB($db_res): array
 	return $result;
 }
 
-function getMovieFromDB($db_res, $genres, $genre = 1): array
+function getMovieFromDB($db_res, $genres, $genre): array
 {
 	$result = [];
 	$notFilteredGenre = getDataFromDb();
