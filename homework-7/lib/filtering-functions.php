@@ -6,7 +6,7 @@ function getGenresFromDB($db_res): array
 	$mysqli_result = mysqli_query($db_res, $query);
 	if ($mysqli_result === false)
 	{
-		trigger_error();
+		trigger_error("Таблица не найдена", E_USER_ERROR);
 	}
 	$result = [];
 	while ($row = $mysqli_result->fetch_assoc())
@@ -20,15 +20,13 @@ function getMovieFromDB($db_res, array $genres, $genre): array
 {
 	$result = [];
 	$notFilteredGenre = getDataFromDb();
-	$filteredGenre = getDataFromDb() . "\n" . 'WHERE ' . $genre . ' IN (SELECT mg.GENRE_ID
-           FROM movie_genre AS mg
-           WHERE mg.MOVIE_ID = movie.ID);';
+	$filteredGenre = getDataFromDb() . "\n" . 'WHERE m.GENRE_ID =' . $genre;
 	$query = $genre === "" ? $notFilteredGenre : $filteredGenre;
 
 	$mysqli_result = mysqli_query($db_res, $query);
 	if ($mysqli_result === false)
 	{
-		trigger_error();
+		trigger_error("Список фильмов по выбранному жанру не доступен", E_USER_ERROR);
 	}
 	while ($row = $mysqli_result->fetch_assoc())
 	{
@@ -45,24 +43,26 @@ function getMovieFromDbById($db_res, $id): array
 	$mysqli_result = mysqli_query($db_res, $query);
 	if ($mysqli_result === false)
 	{
-		trigger_error();
+		trigger_error("Фильм не найден", E_USER_ERROR);
 	}
 	while ($row = $mysqli_result->fetch_assoc())
 	{
-		$row["id_actor"] = getNamesById($db_res, $row["id_actor"], ",");
+		$row["id_actor"] = getNamesById($db_res, $row["id_actor"], ",", $id);
 		$result[$row["ID"]] = $row;
 	}
 	return call_user_func_array('array_merge', $result);
 }
 
-function getNamesById($db_res, string $id, string $separator): array
+function getNamesById($db_res, string $id, string $separator, $movieId): array
 {
 	$explodeArray = explode($separator, $id);
-	$query = 'SELECT * from actor;';
+	$query = 'SELECT * from actor
+INNER JOIN movie_actor
+WHERE MOVIE_ID = '. $movieId . ' GROUP BY NAME;';
 	$mysqli_result = mysqli_query($db_res, $query);
 	if ($mysqli_result === false)
 	{
-		trigger_error();
+		trigger_error("Фильм не найден", E_USER_ERROR);
 	}
 	while ($actor = $mysqli_result->fetch_assoc())
 	{
@@ -106,5 +106,6 @@ function getDataFromDb(): string
         FROM movie_actor AS ma
         WHERE ma.MOVIE_ID = movie.ID) AS id_actor
 FROM movie
+         INNER JOIN movie_genre m on movie.ID = m.MOVIE_ID
 	     INNER JOIN director d on movie.DIRECTOR_ID = d.ID';
 }
